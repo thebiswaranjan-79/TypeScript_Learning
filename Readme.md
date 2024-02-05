@@ -58,3 +58,75 @@ example :
     x = 10; -->
 - if you want oto define a variable with type any , then either mention " : any" while declaring the variable ot don't assign a value to the variable 
 
+// The problem with any is that it starts behaving exactly as js data types
+
+## void return type 
+function fun() : void {
+    console.log("If you don't want to return the function anything so you can give a type void ");
+}
+fun();
+
+function fun() : (number | string) { // it is called union
+    return "10";
+}
+fun();
+
+## ENUMS or ENUMERATION
+=> It is a tpe that represent named constants are know as enum 
+=> let say u have a ticket, the ticket can have any state ["initial State", "Cancelled", "resolved]
+
+=> When u are have limited times of possibility, instead of defining multiple strings and comparing them , we can use enum 
+
+// Enums
+enum TicketStatus {
+    INITIALISED,
+    CANCELLED,
+    PENDING,
+    CLOSED
+}
+console.log(TicketStatus.INITIALISED);// 0
+console.log(TicketStatus.CANCELLED);// 1
+console.log(TicketStatus.PENDING);// 2
+console.log(TicketStatus.CLOSED);// 3
+
+// It has mapped these values like indexing 
+
+// Enums
+enum TicketStatus {
+    INITIALISED,
+    CANCELLED,
+    PENDING,
+    CLOSED
+}
+const Ticket ={
+    id:1,
+    title : "new Ticket",
+    status : TicketStatus.CANCELLED
+}
+
+console.log(Ticket); // 1
+if(Ticket.status == TicketStatus.INITIALISED){
+    console.log("Initialized Started ");
+}else{
+    console.log("I am in other States");
+}
+
+
+enum StatusCode {
+    NotFound = 404,
+    Success = 200,
+    Accepted = 202,
+    Created = 21,
+    BadRequest = 400
+}
+
+const response = {
+    url : "www.somithing.com",
+    type : "GET",
+    data : "Some String",
+    status : StatusCode.Success
+}
+console.log(response); // 200 
+
+## Type Inferring ##
+
