@@ -129,4 +129,33 @@ const response = {
 console.log(response); // 200 
 
 ## Type Inferring ##
+const result = {
+    name : "Sanket",
+    marks : 98
+}
+// the type of the above object is inferred as {name : string, marks :number}
+// something like the iven object below 
 
+// const result : {name : string, marks : number} = {
+//     name : "Sanket",
+//     marks : 89
+// }
+console.log(result);
+
+// updating an old key value pair
+result.marks  = 90; // do you think TS allow this ? \
+
+// adding a new key value pair 
+result.address = "XYZ";
+
+// Now the above stmt will throw a compilation error bcoz in the type {name : string, marks : number} 
+// we never mention anything about any address.
+// That's why TS thinking w are violationg the default property 
+
+
+// To solve this , we can add an additional optional address property while defining the object;
+
+// const result : { name : string, marks : number} = {
+    // name : "Biswa",
+    // marks : 79;
+// }
