@@ -159,3 +159,13 @@ result.address = "XYZ";
     // name : "Biswa",
     // marks : 79;
 // }
+
+
+type Datails = {name : string, marks : number, address? : string}
+
+const result :Datails  = {
+    name : "Sanket",
+    marks : 89
+}
+console.log(result);
+      
